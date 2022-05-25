@@ -1,0 +1,44 @@
+.rec {
+  margin-top: 2rem;
+}
+.flex {
+  display: flex;
+}
+.Card_container {
+  margin: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  grid-column-gap: 20px;
+  grid-row-gap: 2em;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+.title {
+  margin-left: 1.5rem;
+  color: rgb(206, 7, 7);
+  text-decoration: underline;
+  font-weight: 100;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  cursor: default;
+}
+.rec_buttons > a > button {
+  border: 0.1rem solid;
+  cursor: pointer;
+  border-color: red;
+  background: hsl(0 0% 100% / 0.1);
+  backdrop-filter: blur(1em);
+  border-radius: 0.3rem;
+  width: 5rem;
+  height: 2rem;
+  margin-top: 1.6rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  border-style: ridge;
+}

@@ -1,0 +1,53 @@
+.more {
+  display: flex;
+  gap: 1rem;
+  justify-content: right;
+  margin-right: 1rem;
+  color: red;
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: 5em;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.header {
+  align-items: baseline;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.next_logo {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  filter: invert(27%) sepia(51%) saturate(28780%) hue-rotate(0deg)
+    brightness(100%) contrast(100%);
+}
+.flex {
+  display: flex;
+}
+.section_container {
+  margin: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  grid-column-gap: 20px;
+  grid-row-gap: 2em;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+.section-title {
+  margin-left: 1.5rem;
+  color: rgb(206, 7, 7);
+  text-decoration: none;
+  cursor: default;
+  font-weight: 100;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+}
+.none {
+  text-decoration: none;
+}

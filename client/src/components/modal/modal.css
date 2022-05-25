@@ -1,0 +1,26 @@
+.avatar {
+  margin-top: 0.8rem;
+  left: 22rem;
+}
+.flex {
+  display: flex;
+}
+.wa {
+  background: rgba(94, 77, 77, 0.247);
+  backdrop-filter: blur(1em);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  height: 20rem;
+  border-radius: 1rem;
+  margin-bottom: 5rem;
+  border: 0.1rem solid red;
+}
+
+.modal_button {
+  margin-top: 5rem;
+  width: 100%;
+  margin: auto;
+}

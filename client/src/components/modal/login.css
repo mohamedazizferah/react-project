@@ -1,0 +1,11 @@
+.flex {
+  display: flex;
+}
+.login_content {
+  margin: auto;
+  flex-direction: column;
+  width: 50%;
+}
+.txtfld {
+  color: azure;
+}
