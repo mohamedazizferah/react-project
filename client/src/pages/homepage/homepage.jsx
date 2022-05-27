@@ -8,7 +8,7 @@ function HomePage(content) {
   const shows = content.shows;
   return (
     <div>
-      <Slider />
+      <Slider reqs={reqs} />
       <Recommended reqs={reqs} />
       <Section title="Movies" props={movies} />
       <Section title="TV-Shows" props={shows} />

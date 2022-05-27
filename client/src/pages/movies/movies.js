@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import React from "react";
@@ -12,8 +13,12 @@ const darkTheme = createTheme({
 });
 function Movies(props) {
   var content = props.props;
+  const user = JSON.parse(localStorage.getItem("user"));
+
   let { genre } = useParams();
   let { query } = useParams();
+  const favorites = user?.favorites;
+  console.log("user", favorites);
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -22,6 +27,8 @@ function Movies(props) {
   const pathname = window.location.pathname;
   const a = pathname.includes("Genre");
   const b = pathname.includes("Search");
+  const c = pathname.includes("favorites");
+  let arr = [];
   a === true ? (
     (content = content.filter((x) => x?.genre.find((i) => i === genre)))
   ) : (
@@ -32,7 +39,12 @@ function Movies(props) {
   ) : (
     <></>
   );
-  console.log("ahawa", genre);
+  c === true ? (
+    (content = content.filter(({ _id }) => favorites.includes(_id)))
+  ) : (
+    <></>
+  );
+
   return (
     <ThemeProvider theme={darkTheme}>
       <div className="movies">

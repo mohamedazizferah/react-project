@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Outlet, Navigate } from "react-router-dom";
 import "./nav.css";
 import logo from "./logo2.png";
 import BasicModal from "../modal/modal";
+import { Avatar, Button } from "@mui/material";
 
 function Navbar() {
+  const [user, setUser] = useState({});
+
   const [genres, setGrenres] = useState([
     "Action",
     "Adventure",
@@ -44,14 +47,21 @@ function Navbar() {
   const handleSearch = () => {
     navigate("/Search=" + query);
   };
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser({});
+  };
+  useEffect(() => {
+    setUser(localStorage.getItem("user"));
+  }, [user]);
   return (
-    <nav className="flex nav">
+    <nav className="nav flex">
       <a href="/">
         <img src={logo} className="logo" />
       </a>
       <ul className="navigation flex">
         <li>
-          <a href="/">Favorite</a>
+          {!user ? <a href="/">Favorite</a> : <a href="/favorites">Favorite</a>}
         </li>
         <li>
           <div className="dropdown">
@@ -89,7 +99,20 @@ function Navbar() {
         />
       </div>
       <Outlet />
-      <BasicModal />
+      {!user ? (
+        <BasicModal />
+      ) : (
+        <div className="dropdownn">
+          <Avatar alt="Remy Sharp" className="chtar" src="" />
+          <div className="logout">
+            <div className="logoutButton flex">
+              <Button variant="outlined" color="error" onClick={handleLogout}>
+                Log Out
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

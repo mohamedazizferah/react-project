@@ -29,9 +29,6 @@ function App() {
 
   const movies = content.filter((x) => x?.type === "Movie");
   const shows = content.filter((x) => x?.type === "TV-Show");
-  const drama = content.filter((x) => x?.genre.find((i) => i === "Adventure"));
-
-  console.log("aa", drama);
   return (
     <div className="App">
       {error ? <></> : <></>}
@@ -52,6 +49,11 @@ function App() {
               exact
               path="/Movies"
               element={<Movies props={movies} />}
+            ></Route>
+            <Route
+              exact
+              path="/favorites"
+              element={<Movies props={content} />}
             ></Route>
             <Route
               exact
